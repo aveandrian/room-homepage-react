@@ -20,4 +20,4 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![image](https://github.com/aveandrian/room-homepage-react/assets/13519212/8fad01b6-98ad-4057-9df0-7635a8eaa6fa)
