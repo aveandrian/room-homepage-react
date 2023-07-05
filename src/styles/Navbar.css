@@ -1,0 +1,92 @@
+header {
+    position: absolute;
+    z-index: 1;
+    top: 5vh;
+    left: 5vw;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 3.125rem;
+}
+
+.nav-items {
+    display: flex;
+    gap: 1.875rem;
+    text-transform: lowercase;
+    font-weight: 600;
+}
+
+.nav-items a {
+    width: fit-content;
+    display: flex;
+    position: relative;
+}
+
+.nav-items a:hover::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    justify-self: center;
+    align-self: center;
+    width: 50%;
+    height: 0.125rem;
+    bottom: -100%;
+}
+
+
+.menu-btn, .nav-items-background {
+    display: none;
+}
+
+@media screen and (max-width: 60rem) {
+
+    .menu-btn {
+        z-index: 2;
+        display: block;
+    }
+
+    .logo {
+        position: absolute;
+        left: 45vw;
+        transform: translateX(-50%);
+    }
+
+    .nav-items {
+        position: absolute;
+        top: -5vh;
+        left: -5vw;
+        height: 13vh;
+        width: 100vw;
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        padding-inline: 1.25rem;
+        background-color: white;
+        transform: translateY(-100%);
+        transition: 0.3s;
+    }
+
+    .nav-items.opened {
+        transform: none;
+    }
+
+    .nav-items-background.opened {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-items a:hover::after {
+        background-color: black;
+    }
+}

@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'League Spartan', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+p {
+  font-size: 0.75rem;
+  color: hsl(0, 0%, 63%);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 0.6fr 0.4fr;
+  grid-template-rows: 1fr 0.4fr;
+}
+
+.main-img-container {
+  grid-column: 1;
+  grid-row: 1;
+  overflow: hidden;
+  
+}
+
+.carousel {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  transition: all 0.3s;
+}
+
+picture {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.main-content-container {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  padding: 22%;
+}
+
+.main-content-title {
+  font-size: 2.3rem;
+}
+
+.main-content-text {
+  line-height: 1.5em;
+}
+
+.shop-btn {
+  background: transparent;
+  border: none;
+  display: flex;
+  gap: 0.625rem;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  font-weight: 600;
+}
+
+.shop-btn:hover {
+  cursor: pointer;
+  color: hsl(0, 0%, 63%);
+}
+
+.swipe-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 8vh;
+  width: 10vw;
+  background-color: black;
+  display: flex;
+}
+
+.swipe-button {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swipe-button:hover {
+  cursor: pointer;
+  background-color: hsl(0, 0%, 27%);
+}
+
+.bottom-container {
+  grid-row: 2;
+  grid-column: 1 / span 2;
+  display: grid;
+  grid-template-columns: 30vw 40vw 30vw;
+  justify-content: space-between;
+}
+
+.about-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-img.light {
+  margin-left: auto;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-inline: 5.813rem;
+  padding-block: 0.625rem;
+  gap: 0.625rem;
+}
+
+.about-title {
+  margin-top: 15%;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.about-text {
+  line-height: 1.5em;
+  margin-bottom: auto;
+}
+
+.attribution, .attribution a {
+  text-align: center;
+  font-size: 0.75rem;
+  color: hsl(0, 0%, 63%);
+}
+
+@media screen and (max-width: 60rem) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3,auto);
+  }
+
+  .main-content-container {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 3.125rem 1.25rem;
+  }
+
+  .bottom-container {
+    grid-column: 1;
+    grid-row: 3;
+    grid-template-columns: 1fr;
+    
+  }
+
+  .about-content {
+    padding: 3.125rem 1.25rem;
+  }
+
+  .about-title {
+    margin: 0;
+  }
+
+  .about-text {
+    margin-bottom: 10vh;
+  }
+
+  .swipe-wrapper {
+    bottom: 100%;
+    left: 100%;
+    transform: translateX(-100%);
+    width: 30%;
+  }
+}
